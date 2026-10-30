@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
+    <h3>Create a New Listings</h3>
+    <form method="post" action="/listings" novalidate class="needs-validation"> <!-- (bootstrap) novalidate: Browser ki default validation popups ko disable karta hai.
+     needs-validation: Bootstrap ki custom validation styling apply karne ke liye use hoti hai. -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input 
+            name="listing[title]" 
+            placeholder="Add a catchy title" 
+            type="text"
+            class="form-control"  
+            required />  
+            <!--   class = form-control it is bootstrap class it give good styling with form with hiver effect -->
+            <div class="valid-feedback">Title looks good!</div>  <!--ye ek bootstrap ki class hai iska use ye meassage tbhi add hoga jb hum  title correct agg krenge -->
+        </div>
+        
+        <div class="mb-3">
+       <label for="description" class="form-label">Description</label>
+        <textarea
+        id="description"
+        name="listing[description]"
+        class="form-control"
+        required
+             ></textarea>
+            <div class="invalid-feedback">Please enter a short description</div>  
+       </div>
+   
+        <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label> 
+         <input name="listing[image]" 
+         placeholder="Enter image URL/Link"
+         type="text"
+         class="form-control">
+       </div>
+    
+       <div class="row">
+       <div class="mb-3 col-md-4">
+    <label for="price" class="form-label">Price</label> 
+       <input name="listing[price]" placeholder="1200" type="number" class="form-control" required>
+       <div class="invalid-feedback">Price Should be valid!</div> 
+   </div>
+    
+   <div class="mb-3 col-md-8">
+     <label for="country" class="form-label">Country</label>
+     <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
+     <div class="invalid-feedback">Country name Should be valid!</div> 
+   </div>  
+    </div>
+  
+   
+ <div class="mb-3">  <!-- class = mb-3 in give margin from bottom 3  -->
+          <label for="location" class="form-label">location</label>
+         <input name="listing[location]" placeholder="Pune,Mumbai" type="text" class="form-control" required >
+         <div class="invalid-feedback">Location Should be valid!</div> 
+  </div>
+   
+   <br><br>
+    <button class="btn btn-dark add-btn">Add</button>
+     <br><br>
+    </form>
+    </div>
+    </div>
